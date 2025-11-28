@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آٹا چکی کیلکولیٹر</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+<h2>آٹا چکی کیلکولیٹر</h2>
+
+<div class="box">
+    <label>نام: <input id="name"></label><br>
+    <label>کل وزن (کلو): <input type="number" id="weight"></label><br>
+    <label>ایڈوانس آٹا: <input type="number" id="advance" value="0"></label><br>
+    <label>فی کلو قیمت: <input type="number" id="rate" value="80"></label><br><br>
+
+    <label><input type="checkbox" id="noClean"> صفائی نہیں تھی</label><br>
+    <label><input type="checkbox" id="noCut"> کٹوتی نہیں کرنی</label><br>
+    <label><input type="checkbox" id="billFlour"> بل آٹا سے ادا ہوگا</label><br><br>
+
+    <button onclick="calculate()">حساب لگائیں</button>
+</div>
+
+<div id="output" class="box"></div>
+
+<div id="buttons" class="box hidden">
+    <button onclick="confirmRecord()">تصدیق</button>
+    <button onclick="saveLedger()">کھاتے میں</button>
+    <button onclick="deleteOutput()">ڈیلیٹ</button>
+</div>
+
+<h3>ریکارڈ دیکھیں</h3>
+<button onclick="showRecords()">ریکارڈ کھولیں</button>
+
+<div id="records" class="box"></div>
+
+<script src="script.js"></script>
+
+<script>
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js")
+}
+</script>
+
+</body>
+</html>
